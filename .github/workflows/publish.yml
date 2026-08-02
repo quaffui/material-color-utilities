@@ -17,7 +17,7 @@ name: Publish
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
   publish_typescript:
@@ -27,6 +27,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
+          cache-dependency-path: typescript/package-lock.json
           node-version: 18
           cache: npm
 
@@ -38,7 +39,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          registry-url: 'https://wombat-dressing-room.appspot.com/'
+          registry-url: "https://wombat-dressing-room.appspot.com/"
       - run: cd typescript &&  npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
