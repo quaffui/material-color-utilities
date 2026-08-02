@@ -1,5 +1,5 @@
 {
-  "name": "@material/material-color-utilities",
+  "name": "@quaffui/material-color-utilities",
   "version": "0.4.0",
   "publishConfig": {
     "access": "public"
@@ -49,11 +49,17 @@
   },
   "wireit": {
     "build": {
-      "dependencies": ["build:ts"]
+      "dependencies": [
+        "build:ts"
+      ]
     },
     "build:ts": {
       "command": "tsc --pretty",
-      "files": ["tsconfig.json", "**/*.ts", "!**/*.d.ts"],
+      "files": [
+        "tsconfig.json",
+        "**/*.ts",
+        "!**/*.d.ts"
+      ],
       "output": [
         ".tsbuildinfo",
         "**/*.js",
